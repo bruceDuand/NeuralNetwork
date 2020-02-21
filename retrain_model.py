@@ -18,12 +18,12 @@ test_data = zip(x_test_fc_in, y_test)
 training_data = zip(x_train_fc_in, y_train)
 
 
-net = network_cir.Network(sizes=[80, 32, 2], cir_size=[8, 2])
-net.SGD(training_data, 100, 100, 3.0, test_data=test_data)
+net = network_cir.Network(sizes=[80, 64, 32, 2], cir_size=[16, 8, 2])
+net.SGD(training_data, 200, 1, 1e-2, test_data=test_data)
 
 
-cir_weights = net.cir_weights
-cir_biases = net.biases
-save_to_pickle(cir_weights, "weights.pkl")
-save_to_pickle(cir_biases, "biases.pkl")
+# cir_weights = net.cir_weights
+# cir_biases = net.biases
+# save_to_pickle(cir_weights, "weights.pkl")
+# save_to_pickle(cir_biases, "biases.pkl")
 # original trained weights and biasas are in files named cir_weights and cir_biases

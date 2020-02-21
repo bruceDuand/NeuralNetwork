@@ -6,7 +6,7 @@ training_data, validation_data, test_data = load_data_wrapper()
 training_data = list(training_data)
 
 net = network.Network([780, 30, 10])
-net.SGD(training_data, 500, 10, 3.0, test_data=test_data)
+net.Adam(training_data, 500, 20, 1e-3, test_data=test_data)
 
 # def vectorized_result(j):
 #     e = np.zeros((4, 1))
